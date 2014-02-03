@@ -1,0 +1,13 @@
+body{
+  font: 1em Orienta, "Trebuchet MS", Sans-Serif;
+  text-align: center;
+}
+
+  h1{
+    color: blue;
+    padding: 10px 0;
+    border: 2px dashed;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 100px;
+  }

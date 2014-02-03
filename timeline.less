@@ -1,0 +1,124 @@
+/* Variables */
+
+@timeline-background : #fff;
+@timeline-height : 200px;
+@base-color : blue;
+@legend-color : @base-color;
+@line-width : 5px;
+
+.timeline{
+  position: relative;
+  width: 100%;
+  background-color: @timeline-background;
+  height: @timeline-height;
+
+  .line{
+    position: absolute;
+    height: 90%;
+    width: @line-width;
+    background-color: lighten(@base-color,20%);
+    left: 50%;
+    top: 50%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    transform:translateX(-50%);
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    transform:translateY(-50%);
+  }
+
+  .legend{
+    position: absolute;
+    color: @legend-color;
+    font-size: 10px;
+    left: 50%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    transform:translateX(-50%);
+  }
+
+  .start-time-label{
+    bottom: 0;
+  }
+
+  .end-time-label{
+    top: 0;
+  }
+
+  .events{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+
+    li{
+      position: relative;
+
+      &:nth-child(odd) .hand{
+        left: @line-width;
+
+        &:after{
+          border-top:@line-width solid transparent;
+          border-bottom:@line-width solid transparent;
+          border-right: (2 * @line-width) solid lighten(@base-color, 30%);
+          left: -(@line-width);
+        }
+      }
+
+      &:nth-child(even){
+        left: -100%;
+
+        .hand{
+          right:0;
+
+          &:after{
+            right: -(@line-width);
+            border-top:@line-width solid transparent;
+            border-bottom:@line-width solid transparent;
+            border-left: (2 * @line-width) solid lighten(@base-color, 30%);
+          }
+        }
+      }
+
+      .hand{
+        position: absolute;
+        width: (@line-width * 10);
+        height: @line-width / 2;
+        background-color: lighten(@base-color, 30%);
+        top: 50%;
+        -webkit-transform:translateY(-50%);
+        -moz-transform:translateY(-50%);
+        transform:translateY(-50%);
+
+        &:after{
+          content: " ";
+          display: block;
+          width: @line-width;
+          height: @line-width;
+          border-radius: 25%;
+          position: absolute;
+          top: 50%;
+          -webkit-transform:translateY(-50%);
+          -moz-transform:translateY(-50%);
+          transform:translateY(-50%);
+        }
+      }
+
+      .data{
+        text-align: center;
+        padding:10px 20px;
+        background-color: lighten(@base-color, 10%);
+        color: contrast(lighten(@base-color, 10%));
+      }
+
+      &:nth-child(odd) .data{
+        margin-left: (@line-width * 10) + @line-width;
+      }
+      &:nth-child(even) .data{
+        margin-right: (@line-width * 10);
+      }
+    }
+  }
+}
