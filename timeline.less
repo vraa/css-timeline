@@ -122,3 +122,47 @@
     }
   }
 }
+
+/* Phone */
+@media (max-width: 480px){
+
+  .timeline{
+    height: (1.5 * @timeline-height);
+  }
+
+  .timeline .line{
+    left: 5%;
+  }
+  .timeline .legend{
+    left: 5%;
+  }
+  .timeline .events{
+    left: 5%;
+  }
+  .timeline .events li{
+    padding: 10px 0;
+  }
+  .timeline .events li:nth-child(even){
+    left: 0;
+  }
+  .timeline .events li .hand{
+    width: (@line-width * 5);
+  }
+  .timeline .events li:nth-child(even) .hand{
+    left: @line-width;
+  }
+  .timeline .events li:nth-child(even) .hand:after{
+    left: -(@line-width);
+    border: none;
+    border-top:@line-width solid transparent;
+    border-bottom:@line-width solid transparent;
+    border-right: (2 * @line-width) solid lighten(@base-color, 30%);
+  }
+  .timeline .events li:nth-child(odd) .data{
+    margin-left: (@line-width * 5) + @line-width;
+  }
+  .timeline .events li:nth-child(even) .data{
+    margin-left: (@line-width *5) + @line-width;
+    margin-right: 0;
+  }
+}
