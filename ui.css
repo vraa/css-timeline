@@ -11,3 +11,9 @@ body{
     border-right: none;
     margin-bottom: 100px;
   }
+@media (max-width: 480px){
+  h1{
+    font-size: 1.5em;
+    margin-bottom: 50px;
+  }
+}
