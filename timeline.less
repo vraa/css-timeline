@@ -53,7 +53,7 @@
     left: 50%;
     top: 20px;
 
-    li{
+    .event{
       position: relative;
 
       &:nth-child(odd) .hand{
@@ -139,29 +139,29 @@
   .timeline .events{
     left: 5%;
   }
-  .timeline .events li{
+  .timeline .events .event{
     padding: 10px 0;
   }
-  .timeline .events li:nth-child(even){
+  .timeline .events .event:nth-child(even){
     left: 0;
   }
-  .timeline .events li .hand{
+  .timeline .events .event .hand{
     width: (@line-width * 5);
   }
-  .timeline .events li:nth-child(even) .hand{
+  .timeline .events .event:nth-child(even) .hand{
     left: @line-width;
   }
-  .timeline .events li:nth-child(even) .hand:after{
+  .timeline .events .event:nth-child(even) .hand:after{
     left: -(@line-width);
     border: none;
     border-top:@line-width solid transparent;
     border-bottom:@line-width solid transparent;
     border-right: (2 * @line-width) solid lighten(@base-color, 30%);
   }
-  .timeline .events li:nth-child(odd) .data{
+  .timeline .events .event:nth-child(odd) .data{
     margin-left: (@line-width * 5) + @line-width;
   }
-  .timeline .events li:nth-child(even) .data{
+  .timeline .events .event:nth-child(even) .data{
     margin-left: (@line-width *5) + @line-width;
     margin-right: 0;
   }
